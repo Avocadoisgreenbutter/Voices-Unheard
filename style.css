@@ -1,0 +1,67 @@
+/* Día de Muertos Colors */
+:root {
+    --marigold: #FFB400;
+    --fuchsia: #FF00FF;
+    --purple: #800080;
+    --teal: #008080;
+    --royal-blue: #4169E1;
+  }
+  
+  body {
+    font-family: "Arial", sans-serif;
+    background-color: #F8F9FA;
+  }
+  
+  h1 {
+    background-color: var(--purple);
+    color: white;
+    font-size: 2.5rem;
+  }
+  
+  .text-marigold {
+    color: var(--marigold);
+  }
+  
+  .text-fuchsia {
+    color: var(--fuchsia);
+  }
+  
+  .theme-btn {
+    background-color: var(--royal-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .theme-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--fuchsia);
+  }
+  
+  .card {
+    border: 2px solid var(--marigold);
+  }
+  
+  .modal-header {
+    background-color: var(--teal);
+    color: white;
+  }
+  
+  footer {
+    background-color: black; 
+    color: white; 
+    padding: 20px;
+    border-top: 1px solid #444; 
+  }
+  
+  footer h5 {
+    color: #ffb400; 
+  }
+  
+  footer p {
+    margin: 5px 0;
+    line-height: 1.6;
+  }

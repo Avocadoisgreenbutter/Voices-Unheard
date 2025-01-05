@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voices Unheard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="text-center py-4">
+    <h1 class="text-light bg-purple py-3">Voices Unheard</h1>
+    <p class="lead text-secondary">Hispanic Literature Randomiser, Alexandra de Silva 2025</p>
+  </header>
+
+  <main class="container my-5">
+    <section id="filters" class="mb-4">
+      <h2 class="text-fuchsia">Explore by Theme</h2>
+      <div class="d-flex justify-content-center gap-3">
+        <button class="btn theme-btn" onclick="filterWorks('identity')">Identity</button>
+        <button class="btn theme-btn" onclick="filterWorks('migration')">Migration</button>
+        <button class="btn theme-btn" onclick="filterWorks('resistance')">Resistance</button>
+      </div>
+    </section>
+
+    <section id="works">
+      <h2 class="text-marigold">Literary Works</h2>
+      <div id="works-container" class="row gy-4">
+        <!-- Works added here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal for Book Details -->
+  <div class="modal fade" id="bookModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-teal text-white">
+          <h5 class="modal-title" id="bookTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Author:</strong> <span id="bookAuthor"></span></p>
+          <p id="bookContent"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class">
+    <div class="container">
+      <h5>How to Navigate</h5>
+      <p>Click on a theme to explore a curated set of books. Click on any book to see more details.</p>
+      <h5>About the Site</h5>
+      <p>This site was created to highlight and celebrate the voices of marginalized writers, particularly those from Hispanic heritage. It is a platform to explore the themes of identity, migration, and resistance through literature.</p>
+      <p>&copy; 2025 Voices Unheard | Created by Alexandra de Silva</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
