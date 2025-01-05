@@ -1,8 +1,8 @@
 const API_BASE_URL = "https://www.googleapis.com/books/v1/volumes?q=";
 const RESULTS_PER_REQUEST = 40; // Maximum results per API request
-const MAX_START_INDEX = 2000; // Explore up to 2000 results by using pagination
+const MAX_START_INDEX = 2000; // Pagination "hack"
 
-// Cache fetched books by theme to prevent repetitive API calls
+// Prevent repetitive API calls
 const themeBookCache = {};
 
 // Fetch books from Google Books API
@@ -26,14 +26,14 @@ async function fetchBooks(query) {
 
 // Display books dynamically
 async function displayBooks(query, theme) {
-  // Check if books for this theme are already cached
+ 
   if (!themeBookCache[theme] || themeBookCache[theme].length === 0) {
     const books = await fetchBooks(query);
-    themeBookCache[theme] = books; // Cache the fetched books
+    themeBookCache[theme] = books; // Cache 
   }
 
-  // Get the next set of unique books from the cache
-  const books = themeBookCache[theme].splice(0, 6); // Take 6 books and remove them from the cache
+
+  const books = themeBookCache[theme].splice(0, 6); // Remove them from the cache! Begone!
 
   const worksContainer = document.getElementById("works-container");
   worksContainer.innerHTML = ""; // Clear previous content
@@ -58,11 +58,11 @@ async function displayBooks(query, theme) {
     worksContainer.appendChild(bookDiv);
   });
 
-  // Store the displayed books for modal display
+  // Store the displayed books 
   window.books = books;
 }
 
-// Show book details in modal
+
 function showBookDetails(index) {
   const book = window.books[index];
   document.getElementById("bookTitle").textContent = book.title;
@@ -72,7 +72,7 @@ function showBookDetails(index) {
   bookModal.show();
 }
 
-// Search for books by theme
+
 function filterWorks(theme) {
   let query = "Hispanic literature";
   if (theme === "identity") query += " identity culture";
